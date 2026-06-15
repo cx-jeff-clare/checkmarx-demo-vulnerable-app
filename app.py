@@ -4,6 +4,7 @@ Optimized for T&R limitations: ~10 findings total
 Mix: 3-4 exploitable/reachable, 6-7 not exploitable/unreachable
 Author: Jeff Clare
 Date: June 2026
+Current Attempt: 1
 """
 
 import os
