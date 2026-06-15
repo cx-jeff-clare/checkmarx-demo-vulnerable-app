@@ -45,8 +45,9 @@ def get_user(user_id):
     """
     conn = sqlite3.connect("demo.db")
     cursor = conn.cursor()
-    query = f"SELECT * FROM users WHERE id = {user_id}"
-    cursor.execute(query)
+    # Fixed: Using parameterized query to prevent SQL injection
+    query = "SELECT * FROM users WHERE id = ?"
+    cursor.execute(query, (user_id,))
     result = cursor.fetchone()
     conn.close()
     return jsonify({"user": result})
